@@ -1,0 +1,1 @@
+You are going to need to get your Spotify client_id and client_secret from the Spotify API from 'https://developer.spotify.com/', log in with your Spotify and create a project on dashboard, create app, and set REDIRECT_URI as 'http://localhost:8080/callback'
