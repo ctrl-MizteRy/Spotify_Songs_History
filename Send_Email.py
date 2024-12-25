@@ -31,8 +31,8 @@ class SendMail:
 
             message = EmailMessage()
             message.set_content('Sending an automated email with CSV')
-            message['From'] = 'le.h.khang97@gmail.com'
-            message['To'] = 'le.h.khang666@gmail.com'
+            message['From'] = 'PUT-FROM-EMAIL-HERE@gmail.com'
+            message['To'] = 'PUT-TO-EMAIL-HERE@gmail.com'
             message['Subject'] = 'Monthly Spotify Data'
 
             with open(self.txt_file, 'rb') as file:
