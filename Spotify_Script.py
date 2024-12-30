@@ -45,6 +45,10 @@ def main():
                     time_spent = int((datetime.now() - play_time_ms).total_seconds() * 1000)
                     cursor.execute('INSERT INTO times (date, time_ms) VALUES (?,?)', (date_of_play, time_spent))
                     db.commit()
+                    time.sleep(15)
+                    if not is_playing:
+                        sp_session.current_song = " "
+                    continue
                 time.sleep(10)
             if datetime.now().date() == 1:
                 schedule.every().day.at("07:00").do(send_monthly_email())
