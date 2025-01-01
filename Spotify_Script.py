@@ -75,7 +75,7 @@ def create_db():
                        'date TEXT NOT NULL,'
                        'time_ms INTEGER NOT NULL);')
         db.commit()
-
+        
 def send_monthly_email():
     get_data = ReadData()
     gmail = SendMail()
@@ -88,7 +88,7 @@ def send_monthly_email():
     songs_time_appear = list(songs.values())
     with open('Monthly_Songs_Report.txt', 'w') as output:
         print("Monthly songs report from Spotify:", file=output)
-        print(f"Total playing time of {datetime.now().month - 1} is {time_spent / 60000:.2f}m", file=output)
+        print(f"Total playing time of month: {datetime.now().month - 1 if datetime.now().month > 1 else 12 } is {time_spent / 60000:.2f}m", file=output)
         print("Top 10 artists of the month:", file=output)
         for i in range(0,9):
             print(f"{i+1}- {artists_name[i]}, played a total of {artists_time_appear[i]} times.", file=output)
